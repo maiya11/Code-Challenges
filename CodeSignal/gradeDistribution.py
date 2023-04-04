@@ -49,9 +49,10 @@ Option1 = 25% of 100 + 25% of 10 +50% of 50 = 52.5,
 Option2 = 50% of 100 + 50% of 10 = 55, 
 Option3 = 100% of 50 = 50.
 '''
-Solution Query:
-
-SELECT Name, ID
-FROM Grades
-WHERE 2 * Final > (Midterm1 + Midterm2)
-ORDER BY LEFT(Name, 3) ASC, ID ASC;
+CREATE PROCEDURE solution()
+BEGIN
+	SELECT Name, ID
+	FROM Grades
+	WHERE 2 * Final > (Midterm1 + Midterm2)
+	ORDER BY LEFT(Name, 3) ASC, ID ASC;
+END
